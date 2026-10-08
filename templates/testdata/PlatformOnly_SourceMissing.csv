@@ -1,0 +1,3 @@
+Region,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,Description
+OCA,WIN,AD,LA,RA,,ONBSRC,WinServerLocal,Should be created
+OCA,WIN,AD,LS,RA,,ONBSRC,ONB_DOES_NOT_EXIST,Source platform does not exist - must show [ERROR] and be skipped

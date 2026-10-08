@@ -1,0 +1,10 @@
+Region,Environment,Technology,AccessType,Tier,Team,Description,ManagingCPM
+OCA,P,WIN,LA,T0,ONBSAFE,Safe test - OCA prod Windows local admin,
+APAC,D,LIN,LSA,T1,ONBSAFE,Safe test - APAC dev Linux,
+EMEA,T,DB,DSA,,ONBSAFE,"Safe test - EMEA, no tier in name",
+JP,Q,SQL,ENA,T2,ONBSAFE,Safe test - JP QA SQL,
+OT,P,NET,DA,T0,ONBSAFE,Safe test - OT network,
+GLB,P,WKS,LA,,ONBSAFE,,
+oca,p,win,la,t1,onbsafe,Safe test - lowercase input is normalised to upper case,
+OCA,P,WIN,LA,T0,ONBSAFE,Duplicate of the first data row - must NOT create a second safe,
+EMEA,P,HTTP,LSA,T0,ONBSAFE,"Long description test - this text is deliberately longer than one hundred characters so that the script has to trim the admin part but keep the created-by suffix",

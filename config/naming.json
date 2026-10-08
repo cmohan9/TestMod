@@ -1,0 +1,21 @@
+{
+  "_help": "Allowed code tables for the naming convention. Safe: [Region]-[Environment]-[Technology]-[AccessType]-[Tier]-[Team] (Tier optional). Platform: [Region]-[Flavour]-[AppTower]-[AccountType]-[RotationPolicy]-[Vendor]-[Exception] (Vendor/Exception optional).",
+
+  "safe": {
+    "maxLength": 28,
+    "regions": ["OCA", "APAC", "EMEA", "JP", "OT", "GLB"],
+    "environments": ["P", "D", "T", "Q"],
+    "technologies": ["WIN", "LIN", "WKS", "NET", "DB", "SQL", "ORC", "HTTP"],
+    "accessTypes": ["LA", "LSA", "DSA", "ENA", "DA"],
+    "tiers": ["T0", "T1", "T2"]
+  },
+
+  "platform": {
+    "regions": ["OCA", "APAC", "EMEA", "JP", "GLB"],
+    "flavours": ["WIN", "UNX", "DB", "CLD", "NTW"],
+    "appTowers": ["PA", "FW", "NW", "AD", "WT", "IN", "SD", "UX", "AZR", "ORA", "SQL", "PKI", "UAM", "BKP", "O365"],
+    "accountTypes": ["LA", "DA", "LS", "DS", "RT", "SA"],
+    "rotationPolicies": ["RM", "RA", "RS"],
+    "vendors": ["W", "T", "D"]
+  }
+}

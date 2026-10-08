@@ -1,0 +1,3 @@
+Region,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,Description
+OCA,WIN,AD,LA,RA,,ONBCONF,WinServerLocal,First request for this platform name
+OCA,WIN,AD,LA,RA,,ONBCONF,WinDomain,Same platform name but a DIFFERENT source - validation must reject

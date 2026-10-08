@@ -1,0 +1,8 @@
+Region,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,Description
+OCA,WIN,AD,LA,RA,,ONBPLAT,WinServerLocal,Platform test - Windows local auto-rotation
+OCA,WIN,AD,LA,RM,,ONBPLAT,WinServerLocal,Platform test - Windows local manual rotation
+APAC,UNX,UX,LS,RA,W,ONBPLAT,UnixSSH,Platform test - Unix with vendor code
+EMEA,DB,ORA,DS,RS,T,ONBPLAT,Oracle,"Platform test - Oracle, comma in description"
+GLB,DB,SQL,DS,RA,D,ONBPLAT,MSSql,
+JP,WIN,AD,DA,RA,,ONBPLAT,WinDomain,Platform test - Windows domain
+oca,win,ad,la,ra,,onbplat,WinServerLocal,Duplicate of row 1 (lowercase) - must NOT create a second platform

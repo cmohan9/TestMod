@@ -1,0 +1,9 @@
+Region,Environment,Technology,AccessType,Tier,Team,Description,ManagingCPM
+XX,P,WIN,LA,T0,ONBSAFE,bad region,
+OCA,Z,WIN,LA,T0,ONBSAFE,bad environment,
+OCA,P,MAC,LA,T0,ONBSAFE,bad technology,
+OCA,P,WIN,XX,T0,ONBSAFE,bad access type,
+OCA,P,WIN,LA,T9,ONBSAFE,bad tier,
+OCA,P,WIN,LA,T0,,missing team,
+OCA,P,WIN,LA,T0,bad team!,team with illegal characters,
+EMEA,P,HTTP,LSA,T0,ONBSAFETOOLONGNAME,generated name longer than 28 characters,

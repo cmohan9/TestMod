@@ -1,0 +1,4 @@
+SafeName,PlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,ManualManagementReason,AccountName,Description,Prop_LogonDomain
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,onbacct_win01,onbacct-win01.corp.test,password,,Y,,,AccountOnly test - basic,
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,onbacct_win02,onbacct-win02.corp.test,password,,N,Test - manual management,ONB-Custom-Name-Acct02,AccountOnly test - manual management + custom name,
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,onbacct_win03,onbacct-win03.corp.test,password,,Y,,,"AccountOnly test - comma, in description",

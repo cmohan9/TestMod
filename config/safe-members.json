@@ -1,0 +1,59 @@
+{
+  "_help": "Members added to EVERY safe. permissionSets are reusable; members reference them by name. To add another group in future, append an entry to additionalMembers (set enabled=false to switch any entry off without deleting it). memberName must match the name shown in the Vault/Identity exactly - a wrong or unsynced name is reported as a MISSING GROUP in red.",
+
+  "permissionSets": {
+    "PrivilegeCloudAdmin": {
+      "useAccounts": true, "retrieveAccounts": true, "listAccounts": true,
+      "addAccounts": true, "updateAccountContent": true, "updateAccountProperties": true,
+      "initiateCPMAccountManagementOperations": true, "specifyNextAccountContent": true,
+      "renameAccounts": true, "deleteAccounts": true, "unlockAccounts": true,
+      "manageSafe": true, "manageSafeMembers": true, "backupSafe": true,
+      "viewAuditLog": true, "viewSafeMembers": true, "accessWithoutConfirmation": true,
+      "createFolders": true, "deleteFolders": true, "moveAccountsAndFolders": true,
+      "requestsAuthorizationLevel1": true, "requestsAuthorizationLevel2": false
+    },
+    "BGAccount": {
+      "useAccounts": true, "retrieveAccounts": true, "listAccounts": true,
+      "addAccounts": true, "updateAccountContent": true, "updateAccountProperties": true,
+      "initiateCPMAccountManagementOperations": true, "specifyNextAccountContent": true,
+      "renameAccounts": true, "deleteAccounts": true, "unlockAccounts": true,
+      "manageSafe": true, "manageSafeMembers": true, "backupSafe": true,
+      "viewAuditLog": true, "viewSafeMembers": true, "accessWithoutConfirmation": true,
+      "createFolders": true, "deleteFolders": true, "moveAccountsAndFolders": true,
+      "requestsAuthorizationLevel1": false, "requestsAuthorizationLevel2": false
+    },
+    "SafeManager": {
+      "useAccounts": true, "retrieveAccounts": true, "listAccounts": true,
+      "addAccounts": true, "updateAccountContent": true, "updateAccountProperties": true,
+      "initiateCPMAccountManagementOperations": true, "specifyNextAccountContent": true,
+      "renameAccounts": true, "deleteAccounts": true, "unlockAccounts": true,
+      "manageSafe": true, "manageSafeMembers": true, "backupSafe": false,
+      "viewAuditLog": true, "viewSafeMembers": true, "accessWithoutConfirmation": false,
+      "createFolders": true, "deleteFolders": true, "moveAccountsAndFolders": true,
+      "requestsAuthorizationLevel1": false, "requestsAuthorizationLevel2": false
+    },
+    "SafeUser": {
+      "useAccounts": true, "retrieveAccounts": true, "listAccounts": true,
+      "addAccounts": false, "updateAccountContent": false, "updateAccountProperties": false,
+      "initiateCPMAccountManagementOperations": false, "specifyNextAccountContent": false,
+      "renameAccounts": false, "deleteAccounts": false, "unlockAccounts": false,
+      "manageSafe": false, "manageSafeMembers": false, "backupSafe": false,
+      "viewAuditLog": false, "viewSafeMembers": false, "accessWithoutConfirmation": false,
+      "createFolders": false, "deleteFolders": false, "moveAccountsAndFolders": false,
+      "requestsAuthorizationLevel1": false, "requestsAuthorizationLevel2": false
+    }
+  },
+
+  "defaultMembers": [
+    { "memberName": "Privilege Cloud Administrators", "memberType": "Group", "searchIn": "Vault", "permissionSet": "PrivilegeCloudAdmin", "enabled": true },
+    { "memberName": "Global-CyberArk-BGAccount",       "memberType": "Group", "searchIn": "Vault", "permissionSet": "BGAccount",           "enabled": true }
+  ],
+
+  "additionalMembers": [
+  ],
+
+  "derivedMembers": [
+    { "nameTemplate": "Global-Sec-{SafeName}-SafeManagers", "memberType": "Group", "searchIn": "Vault", "permissionSet": "SafeManager", "enabled": true },
+    { "nameTemplate": "Global-SEC-{SafeName}-Users",        "memberType": "Group", "searchIn": "Vault", "permissionSet": "SafeUser",    "enabled": true }
+  ]
+}

@@ -1,0 +1,8 @@
+Region,Environment,Technology,AccessType,Tier,Team,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,ManualManagementReason,AccountName,Description,ManagingCPM,Prop_LogonDomain
+OCA,P,WIN,LA,T0,ONBFULL,WIN,AD,LA,RA,,ONBFULL,WinServerLocal,onbtest_win01,onbtest-win01.corp.test,password,,Y,,,Full test - account 1 (creates platform 1 + safe 1),,
+OCA,P,WIN,LA,T0,ONBFULL,WIN,AD,LA,RA,,ONBFULL,WinServerLocal,onbtest_win02,onbtest-win02.corp.test,password,,Y,,,Full test - account 2 SHARES platform 1 and safe 1,,
+OCA,P,WIN,LA,T0,ONBFULL,WIN,SD,LA,RM,,ONBFULL,WinServerLocal,onbtest_win03,onbtest-win03.corp.test,password,Dummy-Pa55!Test,Y,,,Full test - account with InitialSecret in CSV (expects a warning),,
+APAC,D,LIN,LSA,T1,ONBFULL,UNX,UX,LS,RA,,ONBFULL,UnixSSH,onbtest_unx01,onbtest-lin01.corp.test,password,,N,Test - manual management,ONB-Custom-Name-Unix01,Full test - manual management + custom account name,,
+EMEA,T,DB,DSA,,ONBFULL,DB,ORA,DS,RS,W,ONBFULL,Oracle,onbtest_ora01,onbtest-db01.corp.test,password,,Y,,,"Full test - no tier, vendor W, comma in description",,
+GLB,P,WIN,DA,T2,ONBFULL,WIN,AD,DA,RA,T,ONBFULL,WinDomain,onbtest_dom01,corp.test,password,,Y,,,Full test - domain account with Prop_LogonDomain,,CORP
+jp,q,sql,ena,t0,onbfull,win,pa,sa,rm,d,onbfull,MSSql,onbtest_sql01,onbtest-sql01.corp.test,password,,Y,,,Full test - lowercase input normalised,,

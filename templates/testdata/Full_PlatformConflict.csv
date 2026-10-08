@@ -1,0 +1,3 @@
+Region,Environment,Technology,AccessType,Tier,Team,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,ManualManagementReason,AccountName,Description,ManagingCPM,Prop_LogonDomain
+OCA,P,WIN,LA,T0,ONBCONF,WIN,AD,LA,RA,,ONBCONF,WinServerLocal,onbconf_1,onbconf-1.corp.test,password,,Y,,,First request,,
+OCA,P,WIN,LA,T0,ONBCONF,WIN,AD,LA,RA,,ONBCONF,WinDomain,onbconf_2,onbconf-2.corp.test,password,,Y,,,Same target platform from a different source - must be rejected,,

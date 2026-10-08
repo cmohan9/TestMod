@@ -1,0 +1,6 @@
+SafeName,PlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,ManualManagementReason,AccountName,Description,Prop_LogonDomain
+,OCA-WIN-AD-LA-RA-ONBFULL,u1,a1,password,,Y,,,missing SafeName,
+OCA-P-WIN-LA-T0-ONBFULL,,u2,a2,password,,Y,,,missing PlatformID,
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,,a3,password,,Y,,,missing AccountUserName,
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,u4,,password,,Y,,,missing Address,
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,u5,a5,certificate,,Y,,,bad SecretType,

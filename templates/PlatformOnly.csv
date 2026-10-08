@@ -1,0 +1,2 @@
+Region,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,Description
+OCA,WIN,AD,LA,RA,,,OCA_Windows_Desktop_local_acnt,Windows local admin - auto rotation

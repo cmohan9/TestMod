@@ -1,0 +1,2 @@
+Region,Environment,Technology,AccessType,Tier,Team,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,AccountName,Description,ManagingCPM,Prop_LogonDomain
+OCA,P,WIN,LA,T0,TEST1,WIN,AD,LA,RA,,,OCA_Windows_Desktop_local_acnt,svc_win_Test01,dc01.corp.test.com,password,,Y,,TEST1 Windows local admin,,

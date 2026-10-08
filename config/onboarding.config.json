@@ -1,0 +1,101 @@
+{
+  "_help": "Base configuration. Put real values in onboarding.config.local.json (same folder, git-ignored) - it is merged over this file. CyberArk service-user credentials are NEVER stored here; the script prompts for them at run time.",
+
+  "cyberark": {
+    "identityTenantId": "XXXXXX",
+    "subdomain": "XXXXXX",
+    "identityUrl": "",
+    "apiBaseUrl": "",
+    "_help": "identityUrl / apiBaseUrl are optional full-URL overrides. Leave blank to derive them from identityTenantId / subdomain."
+  },
+
+  "logging": {
+    "localFolder": "logs",
+    "consoleDebug": false
+  },
+
+  "azureBlob": {
+    "enabled": true,
+    "storageAccount": "XXXXXX",
+    "endpointSuffix": "core.windows.net",
+    "endpointOverride": "",
+    "container": "cyberark-onboarding-logs",
+    "sasToken": "XXXXXX",
+    "blobPrefix": "onboarding",
+    "apiVersion": "2021-08-06",
+    "timeoutSeconds": 60,
+    "_help": "SAS token needs Create+Write on the container. If the upload fails the run continues, the failure is logged, and the file is queued in logs\\PendingUploads.csv for manual upload / automatic retry on the next run."
+  },
+
+  "retry": {
+    "maxRetries": 4,
+    "waitSeconds": 5
+  },
+
+  "descriptions": {
+    "suffixTemplate": "Created by {UserId} through script",
+    "separator": " | ",
+    "safeMaxLength": 100,
+    "platformMaxLength": 0,
+    "accountMaxLength": 0,
+    "accountPropertyName": "Description",
+    "_help": "Final description = <admin description><separator><suffixTemplate>. MaxLength 0 = no limit. The admin part is trimmed (never the suffix) if the limit would be exceeded."
+  },
+
+  "safeDefaults": {
+    "olacEnabled": false,
+    "retentionMode": "versions",
+    "numberOfVersionsRetention": 5,
+    "numberOfDaysRetention": 7,
+    "fallbackToBlankCpm": true,
+    "managingCpm": {
+      "_help": "Fill in your CPM names. Precedence when a Tier is present: CSV ManagingCPM column, byRegionTier[REGION-TIER], byTier[TIER], byRegion[REGION], default. If a CPM is not accepted by the tenant (e.g. it does not exist in non-prod) the next one is tried and finally the safe is created with a BLANK CPM (see safeDefaults.fallbackToBlankCpm; set it to false to fail instead). Blank everywhere = no CPM (a warning is logged).",
+      "default": "",
+      "byRegion": {
+        "OCA": "",
+        "APAC": "",
+        "EMEA": "",
+        "JP": "",
+        "OT": "",
+        "GLB": ""
+      },
+      "byTier": {
+        "T0": "",
+        "T1": "",
+        "T2": ""
+      },
+      "byRegionTier": {
+        "OCA-T0": "",
+        "OCA-T1": "",
+        "OCA-T2": "",
+        "APAC-T0": "",
+        "APAC-T1": "",
+        "APAC-T2": "",
+        "EMEA-T0": "",
+        "EMEA-T1": "",
+        "EMEA-T2": "",
+        "JP-T0": "",
+        "JP-T1": "",
+        "JP-T2": "",
+        "GLB-T0": "",
+        "GLB-T1": "",
+        "GLB-T2": ""
+      }
+    }
+  },
+
+  "platformDefaults": {
+    "activateAfterCreate": true
+  },
+
+  "accountDefaults": {
+    "secretType": "password",
+    "autoManage": true,
+    "nameTemplate": "{PlatformId}-{Address}-{UserName}"
+  },
+
+  "tasks": {
+    "timeoutSeconds": 300,
+    "pollIntervalSeconds": 15
+  }
+}

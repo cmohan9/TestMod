@@ -1,0 +1,3 @@
+Region,Environment,Technology,AccessType,Tier,Team,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,ManualManagementReason,AccountName,Description,ManagingCPM,Prop_LogonDomain
+OCA,D,WIN,LA,T0,ONBPART,WIN,AD,LA,RA,,ONBPART,WinServerLocal,onbpart_ok01,onbpart-ok01.corp.test,password,,Y,,,Row A - fully valid,,
+OCA,D,WIN,LSA,T0,ONBPART,WIN,AD,LS,RA,,ONBPART,ONB_DOES_NOT_EXIST,onbpart_bad01,onbpart-bad01.corp.test,password,,Y,,,Row B - source platform missing: platform [ERROR] + account skipped; row A unaffected,,

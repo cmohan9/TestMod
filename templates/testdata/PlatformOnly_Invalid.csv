@@ -1,0 +1,9 @@
+Region,Flavour,AppTower,PlatformAccountType,RotationPolicy,Vendor,Exception,SourcePlatformID,Description
+OT,WIN,AD,LA,RA,,ONBPLAT,WinServerLocal,region OT is valid for safes but NOT for platforms
+OCA,MAC,AD,LA,RA,,ONBPLAT,WinServerLocal,bad flavour
+OCA,WIN,XX,LA,RA,,ONBPLAT,WinServerLocal,bad app tower
+OCA,WIN,AD,ZZ,RA,,ONBPLAT,WinServerLocal,bad account type
+OCA,WIN,AD,LA,RX,,ONBPLAT,WinServerLocal,bad rotation policy
+OCA,WIN,AD,LA,RA,Q,ONBPLAT,WinServerLocal,bad vendor
+OCA,WIN,AD,LA,RA,,bad!,WinServerLocal,exception with illegal characters
+OCA,WIN,AD,LA,RA,,ONBPLAT,,missing SourcePlatformID

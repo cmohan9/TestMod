@@ -1,0 +1,2 @@
+SafeName,PlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,AccountName,Description,Prop_LogonDomain
+OCA-P-WIN-LA-T0-TEST1,OCA-WIN-AD-LA-RA,svc_win_Test02,dc02.corp.test.com,password,,Y,,Second TEST1 account,

@@ -1,0 +1,5 @@
+SafeName,PlatformID,AccountUserName,Address,SecretType,InitialSecret,AutoManage,ManualManagementReason,AccountName,Description,Prop_LogonDomain
+OCA-P-WIN-LA-T0-ONBNOSAFE,OCA-WIN-AD-LA-RA-ONBFULL,onbrt_nosafe,onbrt-nosafe.corp.test,password,,Y,,,Safe does not exist - [ERROR] and skipped; the safe must NOT be created,
+OCA-P-WIN-LA-T0-ONBFULL,ONB-NO-SUCH-PLATFORM,onbrt_noplat,onbrt-noplat.corp.test,password,,Y,,,Platform does not exist - [ERROR] and skipped,
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,onbtest_win01,onbtest-win01.corp.test,password,,Y,,,Already created by Full_Valid - [EXISTS] and left untouched,
+OCA-P-WIN-LA-T0-ONBFULL,OCA-WIN-AD-LA-RA-ONBFULL,onbrt_ok01,onbrt-ok01.corp.test,password,,Y,,,Valid new account - the only one that should be created,
