@@ -30,3 +30,5 @@
 .\Test-InteractiveApiLogin.ps1 -IdentityTenantId abn4187 -PrivilegeCloudSubdomain olympustest -UserName "mohan.c@cyberark.cloud.25603"
 
 .\Test-InteractiveApiLogin.ps1 -IdentityTenantId abn4186 -PrivilegeCloudSubdomain olympus -UserName "mohan.c@olympus.com"
+
+.\Test-BrowserLogin.ps1 -IdentityTenantId abn4186 -ApplicationId __idaptive_cybr_user_oidc -ClientId __idaptive_cybr_user_oidc -MetadataUrl "https://abn4186.id.cyberark.cloud/__idaptive_cybr_user_oidc/.well-known/openid-configuration" -PrivilegeCloudSubdomain olympus
