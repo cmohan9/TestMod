@@ -32,3 +32,17 @@
 .\Test-InteractiveApiLogin.ps1 -IdentityTenantId abn4186 -PrivilegeCloudSubdomain olympus -UserName "mohan.c@olympus.com"
 
 .\Test-BrowserLogin.ps1 -IdentityTenantId abn4186 -ApplicationId __idaptive_cybr_user_oidc -ClientId __idaptive_cybr_user_oidc -MetadataUrl "https://abn4186.id.cyberark.cloud/__idaptive_cybr_user_oidc/.well-known/openid-configuration" -PrivilegeCloudSubdomain olympus
+
+
+
+$env:WPM_TENANT_URL   = 'https://<tenant>.id.cyberark.cloud'
+$env:WPM_OAUTH_APP_ID = '<your app id>'
+.\Get-WpmFolder.ps1 -Discover                 # shows structure, no secrets
+.\Get-WpmFolder.ps1 -Folder 'My API Creds'    # masked output
+
+
+. .\Get-WpmFolder.ps1
+$token = Get-WpmAccessToken -TenantUrl $url -AppId 'WpmFolderFetch'
+$items = Get-WpmFolderCredential -TenantUrl $url -Token $token -Folder 'My API Creds'
+$items[0].Credential        # a PSCredential (username plus SecureString password)
+
