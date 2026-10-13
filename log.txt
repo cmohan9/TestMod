@@ -46,3 +46,8 @@ $token = Get-WpmAccessToken -TenantUrl $url -AppId 'WpmFolderFetch'
 $items = Get-WpmFolderCredential -TenantUrl $url -Token $token -Folder 'My API Creds'
 $items[0].Credential        # a PSCredential (username plus SecureString password)
 
+
+
+.\Get-PCloudSafes.ps1 -PCloudUrl https://<subdomain>.privilegecloud.cyberark.cloud `
+    -IdentityUserName you@company.com -Trace
+
