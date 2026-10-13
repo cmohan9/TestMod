@@ -25,3 +25,6 @@
 
 .\Test-InteractiveApiLogin.ps1 -IdentityTenantId abn4187 -PrivilegeCloudSubdomain <your-test-subdomain> `
   -UserName "mohan.c@cyberark.cloud.25603"
+
+
+.\Test-InteractiveApiLogin.ps1 -IdentityTenantId abn4187 -PrivilegeCloudSubdomain olympustest -UserName "mohan.c@cyberark.cloud.25603"
