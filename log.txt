@@ -15,3 +15,9 @@
 .\Test-BrowserLogin.ps1 -IdentityTenantId abn4187 -ApplicationId OnboardingScriptSignin `
   -ClientId 5ec32b74-42e4-4960-88c0-e713d863cfc2 -UseClientSecret `
   -MetadataUrl "https://abn4187.id.cyberark.cloud/OnboardingScriptSignin/.well-known/openid-configuration"
+
+
+.\Test-BrowserLogin.ps1 -IdentityTenantId abn4187 -ApplicationId OnboardingScriptSignin `
+  -ClientId 5ec32b74-42e4-4960-88c0-e713d863cfc2 -UseClientSecret `
+  -MetadataUrl "https://abn4187.id.cyberark.cloud/OnboardingScriptSignin/.well-known/openid-configuration" `
+  -PrivilegeCloudSubdomain <your-test-subdomain>
