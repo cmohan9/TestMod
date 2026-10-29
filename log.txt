@@ -1,13 +1,13 @@
-index=* (sourcetype="WinEventLog:Security" OR sourcetype="XmlWinEventLog:Security" OR source="WinEventLog:Security" OR source="XmlWinEventLog:Security") (EventCode IN (4729,4733,4757) OR EventID IN (4729,4733,4757))
+index=* (sourcetype="WinEventLog:Security" OR sourcetype="XmlWinEventLog:Security" OR source="WinEventLog:Security" OR source="XmlWinEventLog:Security") (EventCode IN (4728,4732,4756,4746,4751,4761,4729,4733,4757,4747,4752,4762) OR EventID IN (4728,4732,4756,4746,4751,4761,4729,4733,4757,4747,4752,4762))
 | rex field=_raw "(?s)Subject:.*?Account Name:\s+(?<raw_actor>\S+).*?Account Domain:\s+(?<raw_actor_dom>\S+).*?Member:.*?Security ID:\s+(?<raw_sid>\S+)\s+Account Name:\s+(?<raw_member>[^\r\n]+?)\s*[\r\n].*?Group:.*?Group Name:\s+(?<raw_group>[^\r\n]+?)\s*[\r\n]"
-| eval Removed_By=coalesce(SubjectUserName, raw_actor)
+| eval Event=coalesce(EventCode, EventID)
+| eval Action=if(Event IN ("4728","4732","4756","4746","4751","4761"),"ADDED","REMOVED")
+| eval Changed_By=coalesce(SubjectUserName, raw_actor)
 | eval Actor_Domain=coalesce(SubjectDomainName, raw_actor_dom)
-| eval Removed_Member_DN=coalesce(MemberName, raw_member)
+| eval Member_DN=coalesce(MemberName, raw_member)
 | eval Member_SID=coalesce(MemberSid, raw_sid)
 | eval Group_Name=coalesce(TargetUserName, raw_group)
-| eval Event=coalesce(EventCode, EventID)
-| search Group_Name="<YOUR GROUP NAME>"
-| search Removed_Member_DN IN ("*CN=User One,*","*CN=User Two,*","*CN=User Three,*","*CN=User Four,*","*CN=User Five,*","*CN=User Six,*","*CN=User Seven,*","*CN=User Eight,*")
+| search Member_DN IN ("*CN=User One,*","*CN=User Two,*","*CN=User Three,*","*CN=User Four,*","*CN=User Five,*","*CN=User Six,*","*CN=User Seven,*","*CN=User Eight,*")
 | eval Time=strftime(_time,"%Y-%m-%d %H:%M:%S")
-| table Time Removed_By Actor_Domain Removed_Member_DN Member_SID Group_Name Event host
+| table Time Action Group_Name Member_DN Member_SID Changed_By Actor_Domain Event host
 | sort 0 Time
