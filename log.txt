@@ -1,5 +1,7 @@
-index=* (sourcetype="WinEventLog:Security" OR sourcetype="XmlWinEventLog:Security" OR source="WinEventLog:Security" OR source="XmlWinEventLog:Security") (EventCode IN (4728,4732,4756,4746,4751,4761,4729,4733,4757,4747,4752,4762) OR EventID IN (4728,4732,4756,4746,4751,4761,4729,4733,4757,4747,4752,4762))
-| rex field=_raw "(?s)Subject:.*?Account Name:\s+(?<raw_actor>\S+).*?Account Domain:\s+(?<raw_actor_dom>\S+).*?Member:.*?Security ID:\s+(?<raw_sid>\S+)\s+Account Name:\s+(?<raw_member>[^\r\n]+?)\s*[\r\n].*?Group:.*?Group Name:\s+(?<raw_group>[^\r\n]+?)\s*[\r\n]"
+index=* (sourcetype="WinEventLog:Security" OR sourcetype="XmlWinEventLog:Security" OR source="WinEventLog:Security" OR source="XmlWinEventLog:Security") (EventCode IN (4728,4732,4756,4746,4751,4761,4729,4733,4757,4747,4752,4762) OR EventID IN (4728,4732,4756,4746,4751,4761,4729,4733,4757,4747,4752,4762)) ("10009075" OR "10123727" OR "10123726" OR "10074062" OR "10123720" OR "10123730" OR "10085044" OR "10123740")
+| rex field=_raw "Subject:\s+Security ID:\s+[^\r\n]+\s+Account Name:\s+(?<raw_actor>\S+)\s+Account Domain:\s+(?<raw_actor_dom>\S+)"
+| rex field=_raw "Member:\s+Security ID:\s+(?<raw_sid>\S+)\s+Account Name:\s+(?<raw_member>[^\r\n]+)"
+| rex field=_raw "Group:\s+Security ID:\s+[^\r\n]+\s+Group Name:\s+(?<raw_group>[^\r\n]+)"
 | eval Event=coalesce(EventCode, EventID)
 | eval Action=if(Event IN ("4728","4732","4756","4746","4751","4761"),"ADDED","REMOVED")
 | eval Changed_By=coalesce(SubjectUserName, raw_actor)
@@ -7,7 +9,7 @@ index=* (sourcetype="WinEventLog:Security" OR sourcetype="XmlWinEventLog:Securit
 | eval Member_DN=coalesce(MemberName, raw_member)
 | eval Member_SID=coalesce(MemberSid, raw_sid)
 | eval Group_Name=coalesce(TargetUserName, raw_group)
-| search Member_DN IN ("*CN=User One,*","*CN=User Two,*","*CN=User Three,*","*CN=User Four,*","*CN=User Five,*","*CN=User Six,*","*CN=User Seven,*","*CN=User Eight,*")
+| search Member_DN IN ("CN=10009075,*","CN=10123727,*","CN=10123726,*","CN=10074062,*","CN=10123720,*","CN=10123730,*","CN=10085044,*","CN=10123740,*")
 | eval Time=strftime(_time,"%Y-%m-%d %H:%M:%S")
 | table Time Action Group_Name Member_DN Member_SID Changed_By Actor_Domain Event host
 | sort 0 Time
